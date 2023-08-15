@@ -30,5 +30,13 @@ namespace CretaceousClient.Models
       request.AddJsonBody(newAnimal);
       await client.PostAsync(request);
     }
+    public static async void Put(int id, string newAnimal)
+    {
+      RestClient client = new RestClient("https://localhost:7277/");
+      RestRequest request = new RestRequest($"api/animals/{id}", Method.Put);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddJsonBody(newAnimal);
+      await client.PutAsync(request);
+    }
   }
 }
