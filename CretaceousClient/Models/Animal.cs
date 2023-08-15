@@ -14,6 +14,7 @@ namespace CretaceousClient.Models
 
     public static List<Animal> GetAnimals()
     {
+      // _db.Animals.ToList()
       var apiCallTask = ApiHelper.GetAll();
       var result = apiCallTask.Result;
 
